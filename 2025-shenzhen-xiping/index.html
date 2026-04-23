@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>五月假期出行攻略 · 深圳⇄西平自驾之旅</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-gray-50 text-gray-800">
+    <!-- 顶部横幅 -->
+    <header id="hero" class="relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/90 via-purple-800/85 to-pink-700/80 z-10"></div>
+        <img src="https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/copilot/aee69cf0-a1e5-4862-9b6a-e19e05891957/5c7244213dfe4b31be592ea0c7b8998c.png" alt="路线图" class="absolute inset-0 w-full h-full object-cover">
+        <div class="relative z-20 max-w-6xl mx-auto px-4 py-20 text-center text-white">
+            <div class="inline-block px-4 py-1 bg-white/20 backdrop-blur rounded-full text-sm mb-4">
+                <i class="fas fa-calendar-alt mr-1"></i> 2025年5月24日 - 6月1日 · 9天假期
+            </div>
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                🚄 深圳 → 西平 → 🚗 自驾返深
+            </h1>
+            <p class="text-xl md:text-2xl opacity-90 mb-6">带上爸妈和两只猫咪，边走边玩的休闲自驾之旅</p>
+            <div class="flex flex-wrap justify-center gap-4 text-sm">
+                <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full"><i class="fas fa-route mr-1"></i> 全程约1379公里</span>
+                <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full"><i class="fas fa-users mr-1"></i> 3人 + 2猫</span>
+                <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full"><i class="fas fa-map-marked-alt mr-1"></i> 途经4省</span>
+                <span class="bg-white/20 backdrop-blur px-4 py-2 rounded-full"><i class="fas fa-cat mr-1"></i> 宠物友好</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- 导航栏 -->
+    <nav id="navbar" class="sticky top-0 z-50 bg-white/95 backdrop-blur shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 flex items-center overflow-x-auto gap-1 py-2 text-sm">
+            <a href="#overview" class="nav-link whitespace-nowrap px-3 py-2 rounded-full hover:bg-indigo-50 hover:text-indigo-600 transition">📋 总览</a>
+            <a href="#route" class="nav-link whitespace-nowrap px-3 py-2 rounded-full hover:bg-indigo-50 hover:text-indigo-600 transition">🗺️ 路线</a>
+            <a href="#itinerary" class="nav-link whitespace-nowrap px-3 py-2 rounded-full hover:bg-indigo-50 hover:text-indigo-600 transition">📅 行程</a>
+            <a href="#parents" class="nav-link whitespace-nowrap px-3 py-2 rounded-full hover:bg-indigo-50 hover:text-indigo-600 transition">👨‍👩‍👦 父母安排</a>
+            <a href="#pets" class="nav-link whitespace-nowrap px-3 py-2 rounded-full hover:bg-indigo-50 hover:text-indigo-600 transition">🐱 宠物须知</a>
+            <a href="#budget" class="nav-link whitespace-nowrap px-3 py-2 rounded-full hover:bg-indigo-50 hover:text-indigo-600 transition">💰 预算</a>
+            <a href="#tips" class="nav-link whitespace-nowrap px-3 py-2 rounded-full hover:bg-indigo-50 hover:text-indigo-600 transition">💡 贴士</a>
+        </div>
+    </nav>
+
+    <main class="max-w-6xl mx-auto px-4 py-8">
+
+        <!-- 总览 -->
+        <section id="overview" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-2">
+                <span class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-lg">📋</span>
+                行程总览
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="text-3xl mb-3">🚄</div>
+                    <h3 class="font-bold text-lg mb-1">去程·高铁</h3>
+                    <p class="text-gray-500 text-sm">深圳北 → 驻马店西</p>
+                    <p class="text-indigo-600 font-semibold mt-2">约6小时 · 二等座¥652.5</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="text-3xl mb-3">🏠</div>
+                    <h3 class="font-bold text-lg mb-1">在家休整</h3>
+                    <p class="text-gray-500 text-sm">西平县陪伴家人</p>
+                    <p class="text-indigo-600 font-semibold mt-2">2-3天 · 休息准备</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="text-3xl mb-3">🚗</div>
+                    <h3 class="font-bold text-lg mb-1">返程·自驾</h3>
+                    <p class="text-gray-500 text-sm">西平 → 武汉 → 长沙 → 深圳</p>
+                    <p class="text-indigo-600 font-semibold mt-2">约1379km · 5-6天</p>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="text-3xl mb-3">💰</div>
+                    <h3 class="font-bold text-lg mb-1">预估总费用</h3>
+                    <p class="text-gray-500 text-sm">含交通、住宿、餐饮等</p>
+                    <p class="text-indigo-600 font-semibold mt-2">约 ¥6,500 - ¥8,500</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 路线规划 -->
+        <section id="route" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-2">
+                <span class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-lg">🗺️</span>
+                路线规划
+            </h2>
+            <!-- 路线时间轴 -->
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 mb-8">
+                <h3 class="text-xl font-bold mb-6">自驾返程路线（京港澳高速 + 武深高速）</h3>
+                <div class="route-timeline">
+                    <div class="route-node">
+                        <div class="route-dot bg-red-500"></div>
+                        <div class="route-content">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-lg">西平县</span>
+                                <span class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">起点</span>
+                            </div>
+                            <p class="text-gray-500 text-sm">河南省驻马店市 · 租车取车点</p>
+                        </div>
+                    </div>
+                    <div class="route-line">
+                        <span class="route-distance">↓ 约348km · 3.5h</span>
+                    </div>
+                    <div class="route-node">
+                        <div class="route-dot bg-yellow-500"></div>
+                        <div class="route-content">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-lg">武汉市</span>
+                                <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">停留2天</span>
+                            </div>
+                            <p class="text-gray-500 text-sm">湖北省 · 黄鹤楼、户部巷、东湖、省博物馆</p>
+                        </div>
+                    </div>
+                    <div class="route-line">
+                        <span class="route-distance">↓ 约328km · 3.5h</span>
+                    </div>
+                    <div class="route-node">
+                        <div class="route-dot bg-orange-500"></div>
+                        <div class="route-content">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-lg">长沙市</span>
+                                <span class="text-xs bg-orange-100 text-orange-700 px-2 py-0.5 rounded-full">停留2天</span>
+                                <span class="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">⭐ 父母下车推荐</span>
+                            </div>
+                            <p class="text-gray-500 text-sm">湖南省 · 橘子洲、岳麓山、太平老街、湖南博物院</p>
+                        </div>
+                    </div>
+                    <div class="route-line">
+                        <span class="route-distance">↓ 约495km · 6h</span>
+                    </div>
+                    <div class="route-node">
+                        <div class="route-dot bg-pink-500"></div>
+                        <div class="route-content">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-lg">韶关·丹霞山</span>
+                                <span class="text-xs bg-pink-100 text-pink-700 px-2 py-0.5 rounded-full">停留半天-1天</span>
+                            </div>
+                            <p class="text-gray-500 text-sm">广东省 · 世界自然遗产丹霞地貌</p>
+                        </div>
+                    </div>
+                    <div class="route-line">
+                        <span class="route-distance">↓ 约319km · 3.5h</span>
+                    </div>
+                    <div class="route-node">
+                        <div class="route-dot bg-green-500"></div>
+                        <div class="route-content">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-bold text-lg">深圳市</span>
+                                <span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">终点</span>
+                            </div>
+                            <p class="text-gray-500 text-sm">广东省 · 还车点（深圳北站/市区门店）</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 详细行程 -->
+        <section id="itinerary" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-2">
+                <span class="w-10 h-10 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-lg">📅</span>
+                每日行程安排
+            </h2>
+            <div id="itinerary-cards" class="space-y-6"></div>
+        </section>
+
+        <!-- 父母安排 -->
+        <section id="parents" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-2">
+                <span class="w-10 h-10 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center text-lg">👨‍👩‍👦</span>
+                父母下车方案
+            </h2>
+            <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border border-gray-100 mb-6">
+                <div class="flex items-start gap-4 mb-6">
+                    <div class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">⭐</div>
+                    <div>
+                        <h3 class="text-xl font-bold text-blue-700 mb-2">最佳推荐：长沙南站下车</h3>
+                        <p class="text-gray-600 leading-relaxed">长沙是自驾路线上的第二大城市，京广高铁主干线枢纽，父母可在武汉、长沙两座城市都尽情游玩后再乘高铁返回，旅程体验更丰富，陪伴时间也更长。长沙之后的丹霞山路段山路较多，父母不参与也更轻松。</p>
+                    </div>
+                </div>
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="bg-blue-50 rounded-xl p-5">
+                        <h4 class="font-bold mb-2"><i class="fas fa-train text-blue-500 mr-1"></i> 高铁方案（推荐）</h4>
+                        <p class="text-sm text-gray-600 mb-2">长沙南 → 驻马店西站</p>
+                        <p class="text-sm"><strong>耗时：</strong>约3小时（G502/G556等）</p>
+                        <p class="text-sm"><strong>票价：</strong>二等座约¥360/人</p>
+                        <p class="text-sm text-green-600 font-medium mt-1">✅ 班次密集，快捷舒适</p>
+                    </div>
+                    <div class="bg-gray-50 rounded-xl p-5">
+                        <h4 class="font-bold mb-2"><i class="fas fa-train text-gray-500 mr-1"></i> 普通火车方案</h4>
+                        <p class="text-sm text-gray-600 mb-2">长沙站 → 驻马店站/西平站</p>
+                        <p class="text-sm"><strong>耗时：</strong>约7-9小时</p>
+                        <p class="text-sm"><strong>票价：</strong>硬卧约¥180/人</p>
+                        <p class="text-sm text-gray-500 mt-1">💡 经济实惠，适合夜车</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-5">
+                        <h4 class="font-bold mb-2"><i class="fas fa-plane text-purple-500 mr-1"></i> 飞机方案</h4>
+                        <p class="text-sm text-gray-600 mb-2">长沙黄花机场 → 郑州/南阳</p>
+                        <p class="text-sm"><strong>耗时：</strong>1.5小时 + 转车</p>
+                        <p class="text-sm"><strong>票价：</strong>提前订约¥400-600/人</p>
+                        <p class="text-sm text-gray-500 mt-1">⚠️ 备选，需转高铁到西平</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-amber-50 rounded-2xl p-6 border border-amber-200 mb-6">
+                <h4 class="font-bold text-amber-800 mb-3"><i class="fas fa-lightbulb mr-1"></i> 为什么选择长沙？</h4>
+                <ul class="space-y-2 text-sm text-amber-900">
+                    <li class="flex items-start gap-2"><span>✅</span> 父母能在武汉、长沙两座城市都尽兴游玩，旅程更充实</li>
+                    <li class="flex items-start gap-2"><span>✅</span> 长沙南站是京广高铁枢纽，直达驻马店西班次多（每天15+趟）</li>
+                    <li class="flex items-start gap-2"><span>✅</span> 陪伴父母时间更长（共4-5天），孝心拉满</li>
+                    <li class="flex items-start gap-2"><span>✅</span> 长沙美食氛围浓厚，父母可深度体验湘菜文化</li>
+                    <li class="flex items-start gap-2"><span>✅</span> 之后丹霞山路段山路多，父母不参与，自驾更灵活</li>
+                </ul>
+            </div>
+            <div class="bg-blue-50 rounded-2xl p-6 border border-blue-200">
+                <h4 class="font-bold text-blue-800 mb-3"><i class="fas fa-balance-scale mr-1"></i> 武汉 vs 长沙 下车对比</h4>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="border-b border-blue-200 text-blue-900">
+                                <th class="text-left py-2 pr-4">对比项</th>
+                                <th class="text-left py-2 pr-4">武汉下车</th>
+                                <th class="text-left py-2">长沙下车 ⭐</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-blue-900">
+                            <tr class="border-b border-blue-100">
+                                <td class="py-2 pr-4 font-medium">返程高铁时长</td>
+                                <td class="py-2 pr-4">约1小时</td>
+                                <td class="py-2">约3小时</td>
+                            </tr>
+                            <tr class="border-b border-blue-100">
+                                <td class="py-2 pr-4 font-medium">返程票价（2人）</td>
+                                <td class="py-2 pr-4">¥290</td>
+                                <td class="py-2">¥720</td>
+                            </tr>
+                            <tr class="border-b border-blue-100">
+                                <td class="py-2 pr-4 font-medium">父母陪伴时长</td>
+                                <td class="py-2 pr-4">约4天</td>
+                                <td class="py-2">约6天</td>
+                            </tr>
+                            <tr class="border-b border-blue-100">
+                                <td class="py-2 pr-4 font-medium">父母游玩城市</td>
+                                <td class="py-2 pr-4">武汉</td>
+                                <td class="py-2">武汉 + 长沙</td>
+                            </tr>
+                            <tr>
+                                <td class="py-2 pr-4 font-medium">适合人群</td>
+                                <td class="py-2 pr-4">经济优先</td>
+                                <td class="py-2">体验优先</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- 宠物须知 -->
+        <section id="pets" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-2">
+                <span class="w-10 h-10 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-lg">🐱</span>
+                携带宠物出行须知
+            </h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <span class="text-xl">🧳</span> 必备物品清单
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                            <input type="checkbox" class="w-4 h-4 accent-indigo-500">
+                            <span class="text-sm">航空箱/硬质猫包 × 2（用安全带固定）</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                            <input type="checkbox" class="w-4 h-4 accent-indigo-500">
+                            <span class="text-sm">便携猫砂盆 + 猫砂（车上和酒店各备一份）</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                            <input type="checkbox" class="w-4 h-4 accent-indigo-500">
+                            <span class="text-sm">猫粮、零食罐头、饮水器</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                            <input type="checkbox" class="w-4 h-4 accent-indigo-500">
+                            <span class="text-sm">牵引绳/胸背带 × 2</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                            <input type="checkbox" class="w-4 h-4 accent-indigo-500">
+                            <span class="text-sm">一次性尿垫、湿巾、垃圾袋</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                            <input type="checkbox" class="w-4 h-4 accent-indigo-500">
+                            <span class="text-sm">猫咪常用药物（益生菌、晕车药）</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                            <input type="checkbox" class="w-4 h-4 accent-indigo-500">
+                            <span class="text-sm">免疫证明/疫苗本</span>
+                        </div>
+                        <div class="flex items-center gap-3 p-3 bg-gray-50 rounded-xl">
+                            <input type="checkbox" class="w-4 h-4 accent-indigo-500">
+                            <span class="text-sm">熟悉气味的毯子/旧衣物（减少应激）</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
+                    <h3 class="font-bold text-lg mb-4 flex items-center gap-2">
+                        <span class="text-xl">⚠️</span> 行车注意事项
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="p-4 bg-red-50 rounded-xl border-l-4 border-red-400">
+                            <h4 class="font-bold text-red-700 text-sm mb-1">出发前准备</h4>
+                            <p class="text-xs text-red-600">出发前3天开始喂益生菌；出发前3-4小时喂少量食物；提前咨询兽医是否需要晕车药</p>
+                        </div>
+                        <div class="p-4 bg-blue-50 rounded-xl border-l-4 border-blue-400">
+                            <h4 class="font-bold text-blue-700 text-sm mb-1">行车途中</h4>
+                            <p class="text-xs text-blue-600">猫咪放在航空箱内，用安全带固定；保持车内通风但避免直吹；每1.5-2小时停车休息，让猫咪活动</p>
+                        </div>
+                        <div class="p-4 bg-green-50 rounded-xl border-l-4 border-green-400">
+                            <h4 class="font-bold text-green-700 text-sm mb-1">住宿安排</h4>
+                            <p class="text-xs text-green-600">优先选择民宿/公寓（更宠物友好）；提前电话确认可带猫入住；到店后先布置猫砂盆和水碗</p>
+                        </div>
+                        <div class="p-4 bg-purple-50 rounded-xl border-l-4 border-purple-400">
+                            <h4 class="font-bold text-purple-700 text-sm mb-1">应急处理</h4>
+                            <p class="text-xs text-purple-600">猫咪晕车（流口水/呕吐）：停车休息，轻声安抚；应激反应：给予零食和熟悉气味物品；提前查好沿途宠物医院</p>
+                        </div>
+                        <div class="p-4 bg-amber-50 rounded-xl border-l-4 border-amber-400">
+                            <h4 class="font-bold text-amber-700 text-sm mb-1">温度控制</h4>
+                            <p class="text-xs text-amber-600">5月底天气较热，车内空调保持22-25°C；绝对不要将猫咪单独留在车内；停车时确保通风</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 费用预算 -->
+        <section id="budget" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-2">
+                <span class="w-10 h-10 bg-green-100 text-green-600 rounded-xl flex items-center justify-center text-lg">💰</span>
+                费用预算明细
+            </h2>
+            <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-sm">
+                        <thead>
+                            <tr class="bg-gradient-to-r from-indigo-500 to-purple-500 text-white">
+                                <th class="text-left p-4 font-semibold">费用项目</th>
+                                <th class="text-left p-4 font-semibold">明细说明</th>
+                                <th class="text-right p-4 font-semibold">预估费用（元）</th>
+                            </tr>
+                        </thead>
+                        <tbody id="budget-table"></tbody>
+                        <tfoot>
+                            <tr class="bg-indigo-50 font-bold text-indigo-800">
+                                <td class="p-4" colspan="2">📊 总计预估费用</td>
+                                <td class="p-4 text-right text-xl" id="budget-total"></td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="mt-4 p-4 bg-blue-50 rounded-xl text-sm text-blue-700">
+                <i class="fas fa-info-circle mr-1"></i>
+                <strong>说明：</strong>以上费用为预估范围，实际费用可能因季节、预订时间、具体选择等因素有所浮动。建议提前预订高铁票和住宿以获得更优价格。
+            </div>
+        </section>
+
+        <!-- 实用贴士 -->
+        <section id="tips" class="mb-16">
+            <h2 class="text-3xl font-bold mb-8 flex items-center gap-2">
+                <span class="w-10 h-10 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-lg">💡</span>
+                实用贴士
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="tips-grid"></div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="mb-2">🚗 祝旅途愉快，一路平安！</p>
+            <p>由 <a href="https://with.woa.com/" style="color: #8A2BE2;" target="_blank">With</a> 通过自然语言生成</p>
+        </div>
+    </footer>
+
+    <script type="module" src="main.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,200 @@
+/* 自定义样式 */
+html {
+    scroll-behavior: smooth;
+}
+
+/* 路线时间轴 */
+.route-timeline {
+    position: relative;
+    padding-left: 2rem;
+}
+
+.route-node {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    position: relative;
+}
+
+.route-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 4px;
+    box-shadow: 0 0 0 4px rgba(0,0,0,0.05);
+    position: relative;
+    z-index: 2;
+}
+
+.route-content {
+    flex: 1;
+    padding-bottom: 0.5rem;
+}
+
+.route-line {
+    display: flex;
+    align-items: center;
+    padding: 0.75rem 0 0.75rem 0;
+    position: relative;
+}
+
+.route-line::before {
+    content: '';
+    position: absolute;
+    left: 7px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, #e5e7eb, #d1d5db);
+    z-index: 1;
+}
+
+.route-distance {
+    margin-left: 2rem;
+    font-size: 0.8rem;
+    color: #6b7280;
+    background: #f3f4f6;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    position: relative;
+    z-index: 2;
+}
+
+/* 导航栏激活状态 */
+.nav-link.active {
+    background-color: #eef2ff;
+    color: #4f46e5;
+    font-weight: 600;
+}
+
+/* 行程卡片 */
+.day-card {
+    background: white;
+    border-radius: 1rem;
+    border: 1px solid #f3f4f6;
+    overflow: hidden;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.day-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.day-header {
+    padding: 1.25rem 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.day-header:hover {
+    background-color: #fafafa;
+}
+
+.day-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    color: white;
+}
+
+.day-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+}
+
+.day-body.open {
+    max-height: 3000px;
+}
+
+.day-body-inner {
+    padding: 0 1.5rem 1.5rem;
+}
+
+/* 景点卡片 */
+.spot-card {
+    background: #f9fafb;
+    border-radius: 0.75rem;
+    padding: 1rem;
+    margin-bottom: 0.75rem;
+    border-left: 3px solid;
+    transition: transform 0.2s ease;
+}
+
+.spot-card:hover {
+    transform: translateX(4px);
+}
+
+/* 预算表格 */
+table tbody tr {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background 0.2s;
+}
+
+table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+/* 贴士卡片 */
+.tip-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 1px solid #f3f4f6;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    transform: translateY(-2px);
+}
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #c4c4c4;
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a0a0a0;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .route-timeline {
+        padding-left: 1rem;
+    }
+    
+    .route-distance {
+        margin-left: 1.5rem;
+        font-size: 0.75rem;
+    }
+}
+
+/* 复选框样式 */
+input[type="checkbox"]:checked + span {
+    text-decoration: line-through;
+    color: #9ca3af;
+}
+

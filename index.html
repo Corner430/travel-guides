@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅行攻略集</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        .card { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(0,0,0,0.1); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+
+    <!-- 顶部 -->
+    <header class="bg-gradient-to-br from-indigo-900 via-purple-800 to-pink-700 text-white">
+        <div class="max-w-4xl mx-auto px-6 py-16 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">旅行攻略集</h1>
+            <p class="text-lg opacity-90">记录每一段旅程的规划与故事</p>
+        </div>
+    </header>
+
+    <!-- 攻略列表 -->
+    <main class="max-w-4xl mx-auto px-6 py-12">
+        <div class="grid gap-6">
+
+            <!-- 攻略卡片 1 -->
+            <a href="./2025-shenzhen-xiping/" class="card block bg-white rounded-2xl p-6 border border-gray-100 shadow-sm">
+                <div class="flex items-start gap-4">
+                    <div class="w-14 h-14 bg-indigo-100 rounded-xl flex items-center justify-center text-2xl flex-shrink-0">
+                        🚗
+                    </div>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 mb-1 flex-wrap">
+                            <span class="text-xs text-gray-400 font-mono">2025-05</span>
+                            <span class="text-xs bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full">自驾</span>
+                            <span class="text-xs bg-pink-100 text-pink-600 px-2 py-0.5 rounded-full">带猫出行</span>
+                        </div>
+                        <h2 class="text-xl font-bold mb-1">深圳 ⇄ 西平自驾之旅</h2>
+                        <p class="text-gray-500 text-sm leading-relaxed">
+                            五月假期 9 天行程，高铁北上回家，再带上爸妈和两只猫咪自驾南下返深。途经武汉、长沙、丹霞山，边走边玩的休闲之旅。
+                        </p>
+                        <div class="flex items-center gap-4 mt-3 text-xs text-gray-400">
+                            <span><i class="fas fa-route mr-1"></i>全程约 1379km</span>
+                            <span><i class="fas fa-calendar-alt mr-1"></i>9 天</span>
+                            <span><i class="fas fa-map-marked-alt mr-1"></i>途经 4 省</span>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0 text-gray-300 self-center">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </a>
+
+            <!-- 以后新增攻略，复制上面的卡片块，修改链接、图标、内容即可 -->
+
+        </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="text-center text-gray-400 text-sm py-8">
+        <p>&copy; 2025 corner430 · 旅行攻略集</p>
+    </footer>
+
+</body>
+</html>
