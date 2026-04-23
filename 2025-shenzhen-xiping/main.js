@@ -648,4 +648,3 @@ document.addEventListener('DOMContentLoaded', () => {
   setupNavHighlight();
   expandDefaultDays();
 });
-```
