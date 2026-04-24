@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>新手司机重返驾驶 · 全链路计划</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563EB',
+            accent: '#F59E0B',
+            dark: '#1E293B',
+            light: '#F8FAFC',
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- 顶部导航 -->
+  <nav class="fixed top-0 left-0 right-0 bg-white/90 backdrop-blur-md shadow-sm z-50">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <i class="ri-steering-2-fill text-2xl text-primary"></i>
+        <span class="font-bold text-lg text-dark">新手司机 · 重返驾驶</span>
+      </div>
+      <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+        <a href="#overview" class="nav-link text-gray-500 hover:text-primary transition">总览</a>
+        <a href="#learn" class="nav-link text-gray-500 hover:text-primary transition">学习准备</a>
+        <a href="#controls" class="nav-link text-gray-500 hover:text-primary transition">车内按键</a>
+        <a href="#rent" class="nav-link text-gray-500 hover:text-primary transition">租车指南</a>
+        <a href="#practice" class="nav-link text-gray-500 hover:text-primary transition">练车计划</a>
+        <a href="#routes" class="nav-link text-gray-500 hover:text-primary transition">自驾路线</a>
+        <a href="#tips" class="nav-link text-gray-500 hover:text-primary transition">安全贴士</a>
+      </div>
+      <button id="mobileMenuBtn" class="md:hidden text-2xl text-gray-600" aria-label="打开菜单" aria-expanded="false"><i class="ri-menu-line"></i></button>
+    </div>
+    <!-- 移动端菜单 -->
+    <div id="mobileMenu" class="hidden md:hidden bg-white border-t px-4 pb-4">
+      <a href="#overview" class="block py-2 text-gray-600">📋 总览</a>
+      <a href="#learn" class="block py-2 text-gray-600">📚 学习准备</a>
+      <a href="#controls" class="block py-2 text-gray-600">🎛️ 车内按键</a>
+      <a href="#rent" class="block py-2 text-gray-600">🚗 租车指南</a>
+      <a href="#practice" class="block py-2 text-gray-600">🏋️ 练车计划</a>
+      <a href="#routes" class="block py-2 text-gray-600">🗺️ 自驾路线</a>
+      <a href="#tips" class="block py-2 text-gray-600">⚠️ 安全贴士</a>
+    </div>
+  </nav>
+
+  <!-- Hero区域 -->
+  <header class="relative pt-20 overflow-hidden">
+    <div class="hero-bg absolute inset-0"></div>
+    <div class="relative max-w-7xl mx-auto px-4 py-16 md:py-24 flex flex-col md:flex-row items-center gap-8">
+      <div class="flex-1 text-center md:text-left">
+        <div class="inline-flex items-center gap-2 bg-amber-100 text-amber-700 px-4 py-1.5 rounded-full text-sm font-medium mb-4">
+          <i class="ri-map-pin-line"></i> 深圳南山区出发
+        </div>
+        <h1 class="text-3xl md:text-5xl font-extrabold text-dark leading-tight mb-4">
+          拿了驾照多年没开车？<br>
+          <span class="text-primary">这份计划帮你重返驾驶</span>
+        </h1>
+        <p class="text-gray-500 text-lg mb-6 max-w-lg">从零开始：看视频学按键 → 租车练习 → 周末自驾出游，一站式全链路规划，让你安心上路。</p>
+        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+          <a href="#learn" class="bg-primary text-white px-6 py-3 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-200">
+            <i class="ri-play-circle-line mr-1"></i> 开始学习
+          </a>
+          <a href="#routes" class="bg-white text-primary border-2 border-primary px-6 py-3 rounded-xl font-semibold hover:bg-blue-50 transition">
+            <i class="ri-road-map-line mr-1"></i> 查看路线
+          </a>
+        </div>
+      </div>
+      <div class="flex-1 max-w-md">
+        <img src="https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/0b4e7c32-8522-4f31-8baa-acf2e7682793/image_1777050814_2_1.jpg" alt="汽车内饰" class="rounded-2xl shadow-2xl w-full object-cover aspect-video">
+      </div>
+    </div>
+  </header>
+
+  <!-- 总览时间线 -->
+  <section id="overview" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">📋 全链路计划总览</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">从周一到周日，7天完整规划，循序渐进让你从"不敢碰车"到"自信上路"</p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4" id="timelineGrid">
+        <!-- JS动态渲染 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 学习准备 -->
+  <section id="learn" class="py-16 bg-gradient-to-b from-blue-50 to-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">📚 第一步：视频学习 & 知识准备</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">上车之前，先在家看视频把基础知识补齐，做到心中有数</p>
+      </div>
+      
+      <!-- 推荐视频 -->
+      <div class="mb-12">
+        <h3 class="text-xl font-bold text-dark mb-6 flex items-center gap-2">
+          <i class="ri-video-line text-red-500"></i> 必看视频清单（B站/抖音搜索）
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="videoList">
+          <!-- JS动态渲染 -->
+        </div>
+      </div>
+
+      <!-- 学习要点 -->
+      <div>
+        <h3 class="text-xl font-bold text-dark mb-6 flex items-center gap-2">
+          <i class="ri-book-open-line text-primary"></i> 核心学习要点
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="learnPoints">
+          <!-- JS动态渲染 -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 车内按键详解 -->
+  <section id="controls" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">🎛️ 第二步：车内按键全解析</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">上车后不慌张，每个按键的位置和功能都在这里</p>
+      </div>
+
+      <!-- 按键分区标签页 -->
+      <div class="flex flex-wrap gap-2 mb-8 justify-center" id="controlTabs">
+        <!-- JS动态渲染 -->
+      </div>
+      
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="relative">
+          <img src="https://zhiyan-ai-agent-with-1258344702.cos.ap-guangzhou.tencentcos.cn/with/5d61cd30-a49d-4155-994d-9c812c506249/image_1777050815_1_3.jpg" alt="汽车内饰按键" class="rounded-2xl shadow-lg w-full object-cover aspect-video">
+          <div class="absolute bottom-4 left-4 bg-black/60 text-white px-4 py-2 rounded-lg text-sm">
+            <i class="ri-information-line mr-1"></i> 不同车型按键位置可能略有差异，但功能基本一致
+          </div>
+        </div>
+        <div id="controlContent" class="space-y-3">
+          <!-- JS动态渲染 -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 租车指南 -->
+  <section id="rent" class="py-16 bg-gradient-to-b from-amber-50 to-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">🚗 第三步：租车指南</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">南山区周边租车点推荐，以及租车注意事项</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- 租车平台推荐 -->
+        <div class="lg:col-span-2">
+          <h3 class="text-xl font-bold text-dark mb-6 flex items-center gap-2">
+            <i class="ri-store-2-line text-amber-500"></i> 推荐租车平台 & 南山区附近门店
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4" id="rentShops">
+            <!-- JS动态渲染 -->
+          </div>
+        </div>
+        <!-- 租车注意事项 -->
+        <div>
+          <h3 class="text-xl font-bold text-dark mb-6 flex items-center gap-2">
+            <i class="ri-error-warning-line text-red-500"></i> 租车注意事项
+          </h3>
+          <div class="bg-white rounded-2xl shadow-md p-6 space-y-4" id="rentTips">
+            <!-- JS动态渲染 -->
+          </div>
+        </div>
+      </div>
+
+      <!-- 推荐车型 -->
+      <div class="mt-12">
+        <h3 class="text-xl font-bold text-dark mb-6 flex items-center gap-2">
+          <i class="ri-car-line text-primary"></i> 新手推荐车型
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="carTypes">
+          <!-- JS动态渲染 -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 练车计划 -->
+  <section id="practice" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">🏋️ 第四步：周末练车计划</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">分阶段练习，从停车场到城市道路，循序渐进建立信心</p>
+      </div>
+
+      <!-- 练车阶段 -->
+      <div class="space-y-8" id="practiceStages">
+        <!-- JS动态渲染 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 自驾路线 -->
+  <section id="routes" class="py-16 bg-gradient-to-b from-green-50 to-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">🗺️ 第五步：推荐自驾路线</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">从南山出发，由近到远，难度递增的自驾路线推荐</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="routeCards">
+        <!-- JS动态渲染 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 安全贴士 -->
+  <section id="tips" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">⚠️ 安全驾驶贴士</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">新手上路最重要的安全注意事项</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="safetyTips">
+        <!-- JS动态渲染 -->
+      </div>
+
+      <!-- 紧急情况处理 -->
+      <div class="mt-12">
+        <h3 class="text-xl font-bold text-dark mb-6 flex items-center gap-2">
+          <i class="ri-alarm-warning-line text-red-500"></i> 紧急情况处理
+        </h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" id="emergencyCards">
+          <!-- JS动态渲染 -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 坡道停车专题 -->
+  <section id="slope" class="py-16 bg-gradient-to-b from-purple-50 to-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">🏔️ 专题：坡道停车 & 起步</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">新手最怕的坡道操作，详细步骤让你不再紧张</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h3 class="text-lg font-bold text-dark mb-4 flex items-center gap-2">
+            <span class="bg-red-100 text-red-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">停</span>
+            坡道停车步骤（自动挡）
+          </h3>
+          <div class="space-y-3" id="slopeStopSteps">
+            <!-- JS动态渲染 -->
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-8">
+          <h3 class="text-lg font-bold text-dark mb-4 flex items-center gap-2">
+            <span class="bg-green-100 text-green-600 w-8 h-8 rounded-full flex items-center justify-center text-sm font-bold">起</span>
+            坡道起步步骤（自动挡）
+          </h3>
+          <div class="space-y-3" id="slopeStartSteps">
+            <!-- JS动态渲染 -->
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 bg-amber-50 border border-amber-200 rounded-2xl p-6">
+        <h4 class="font-bold text-amber-800 mb-2"><i class="ri-lightbulb-line mr-1"></i> 练习建议</h4>
+        <p class="text-amber-700">建议先在小区地下车库的坡道反复练习，车少人少，坡度适中。等熟练后再去立交桥匝道等较陡的坡道练习。深圳南山区的<strong>南山智园地下车库</strong>、<strong>海岸城地下停车场</strong>的坡道都比较适合新手练习。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 完整周末行程表 -->
+  <section id="schedule" class="py-16 bg-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-bold text-dark mb-3">📅 完整周末行程安排</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto">两天一夜的详细时间安排，跟着走就行</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8" id="scheduleCards">
+        <!-- JS动态渲染 -->
+      </div>
+    </div>
+  </section>
+
+  <!-- 页脚 -->
+  <footer class="bg-dark text-gray-400 py-12">
+    <div class="max-w-7xl mx-auto px-4 text-center">
+      <div class="flex items-center justify-center gap-2 mb-4">
+        <i class="ri-steering-2-fill text-2xl text-primary"></i>
+        <span class="font-bold text-lg text-white">新手司机 · 重返驾驶</span>
+      </div>
+      <p class="text-sm mb-2">安全第一，循序渐进，享受驾驶的乐趣 🚗</p>
+      <p class="text-xs text-gray-500 mb-4">本计划仅供参考，请根据实际情况灵活调整。驾驶时请遵守交通法规。</p>
+      <p class="text-xs text-gray-500">&copy; 2025 corner430</p>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button id="backToTop" aria-label="回到顶部" class="fixed bottom-6 right-6 bg-primary text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center text-xl opacity-0 pointer-events-none transition-all hover:bg-blue-700 z-50">
+    <i class="ri-arrow-up-line"></i>
+  </button>
+
+  <script type="module" src="main.js"></script>
+</body>
+</html>
+

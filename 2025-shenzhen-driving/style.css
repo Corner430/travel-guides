@@ -1,0 +1,196 @@
+/* 自定义样式 - 仅用于Tailwind无法实现的效果 */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+
+.hero-bg {
+  background: linear-gradient(135deg, #EBF5FF 0%, #FFF7ED 50%, #F0FDF4 100%);
+}
+
+/* 时间线卡片动画 */
+.timeline-card {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.timeline-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* 视频卡片 */
+.video-card {
+  transition: all 0.3s ease;
+}
+.video-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* 按键标签 */
+.control-tab {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.control-tab.active {
+  background-color: #2563EB;
+  color: white;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.3);
+}
+
+/* 按键项 */
+.control-item {
+  transition: all 0.2s ease;
+  animation: fadeInUp 0.3s ease forwards;
+}
+.control-item:hover {
+  background-color: #EFF6FF;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 路线卡片 */
+.route-card {
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+.route-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+}
+.route-card:hover .route-img {
+  transform: scale(1.05);
+}
+.route-img {
+  transition: transform 0.5s ease;
+}
+
+/* 练车阶段 */
+.stage-card {
+  transition: all 0.3s ease;
+}
+.stage-card:hover {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+}
+
+/* 安全贴士卡片 */
+.safety-card {
+  transition: all 0.3s ease;
+}
+.safety-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* 步骤项 */
+.step-item {
+  transition: all 0.2s ease;
+}
+.step-item:hover {
+  background-color: #F8FAFC;
+  border-radius: 12px;
+}
+
+/* 行程卡片 */
+.schedule-item {
+  transition: all 0.2s ease;
+}
+.schedule-item:hover {
+  background-color: #EFF6FF;
+  border-radius: 8px;
+}
+
+/* 租车店铺卡片 */
+.rent-card {
+  transition: all 0.3s ease;
+}
+.rent-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* 车型卡片 */
+.car-card {
+  transition: all 0.3s ease;
+}
+.car-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* 紧急卡片 */
+.emergency-card {
+  transition: all 0.3s ease;
+  border-left: 4px solid #EF4444;
+}
+.emergency-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+/* 导航高亮 */
+.nav-link.active {
+  color: #2563EB;
+  font-weight: 600;
+}
+
+
+/* 滚动条美化 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* 难度标签 */
+.difficulty-easy {
+  background-color: #DCFCE7;
+  color: #166534;
+}
+.difficulty-medium {
+  background-color: #FEF3C7;
+  color: #92400E;
+}
+.difficulty-hard {
+  background-color: #FEE2E2;
+  color: #991B1B;
+}
+
+/* 租车提示项 */
+.rent-tip-item {
+  position: relative;
+  padding-left: 24px;
+}
+.rent-tip-item::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #F59E0B;
+}
+
