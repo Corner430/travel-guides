@@ -1,0 +1,89 @@
+/* 自定义补充样式 */
+.timeline-item {
+  position: relative;
+}
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  left: -1.85rem;
+  top: 1.2rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #10b981, #0ea5e9);
+  box-shadow: 0 0 0 4px #fff, 0 0 0 6px #d1fae5;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+  .timeline-item::before {
+    left: -2.85rem;
+  }
+}
+
+.timeline-card {
+  transition: all .3s ease;
+  cursor: pointer;
+}
+.timeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, .15);
+}
+.timeline-card .detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.timeline-card.open .detail {
+  max-height: 500px;
+}
+.timeline-card .arrow {
+  transition: transform .3s ease;
+}
+.timeline-card.open .arrow {
+  transform: rotate(180deg);
+}
+
+.photo-card {
+  position: relative;
+  overflow: hidden;
+  transition: transform .3s ease;
+}
+.photo-card:hover {
+  transform: translateY(-4px);
+}
+.photo-card .badge {
+  position: absolute;
+  top: .75rem;
+  left: .75rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .4rem 0;
+  cursor: pointer;
+  transition: color .2s;
+}
+.checklist-item input {
+  accent-color: #10b981;
+  width: 1.05rem;
+  height: 1.05rem;
+}
+.checklist-item.done {
+  color: #94a3b8;
+  text-decoration: line-through;
+}
+
+/* 类型标签颜色 */
+.tag-drive  { background: #d1fae5; color: #047857; }
+.tag-hike   { background: #e0f2fe; color: #0369a1; }
+.tag-meal   { background: #fef3c7; color: #b45309; }
+.tag-rest   { background: #f3e8ff; color: #7e22ce; }
+.tag-shop   { background: #ffe4e6; color: #be123c; }
+
+/* 滚动条美化 */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-thumb { background: #10b981; border-radius: 4px; }
+::-webkit-scrollbar-track { background: #f0fdf4; }
+
