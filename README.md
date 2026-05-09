@@ -2,13 +2,13 @@
 
 旅行攻略集合，记录每一段旅程的详细规划与实用信息。
 
-**在线访问**: [travel-guides.edgeone.dev](https://travel-guides.edgeone.dev)
+**在线访问**: [travel.corner430.eu.org](https://travel.corner430.eu.org)
 
 ## 攻略列表
 
 | 时间 | 攻略 | 说明 |
 |------|------|------|
-| 2025-05 | [深圳 ⇄ 西平自驾之旅](https://travel-guides.edgeone.dev/2025-shenzhen-xiping/) | 9 天假期，高铁北上 + 自驾南下，途经武汉、长沙、丹霞山 |
+| 2025-05 | [深圳 ⇄ 西平自驾之旅](https://travel.corner430.eu.org/2025-shenzhen-xiping/) | 9 天假期，高铁北上 + 自驾南下，途经武汉、长沙、丹霞山 |
 
 ## 技术栈
 
