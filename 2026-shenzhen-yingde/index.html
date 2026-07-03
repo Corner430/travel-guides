@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英德自驾攻略 · 英西峰林 × 宝晶宫</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #fafaf8;
+  --surface: #ffffff;
+  --surface-warm: #fefdfb;
+  --border: #f0ede8;
+  --border-hover: #e0dbd4;
+  --text: #2c2a26;
+  --text-secondary: #6b6560;
+  --text-muted: #9c9590;
+  --accent: #4a7c59;
+  --accent-light: #e8f2ec;
+  --accent-dark: #3a6347;
+  --gold: #b8860b;
+  --gold-light: #fdf8ef;
+  --blue: #4a6fa5;
+  --blue-light: #eef3fa;
+  --rose: #a0616a;
+  --rose-light: #faf0f1;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --shadow-xs: 0 1px 2px rgba(0,0,0,.04);
+  --shadow-sm: 0 2px 8px rgba(0,0,0,.04), 0 1px 2px rgba(0,0,0,.02);
+  --shadow: 0 4px 24px rgba(0,0,0,.06);
+  --shadow-lg: 0 12px 48px rgba(0,0,0,.08);
+  --font-serif: 'Noto Serif SC', 'Georgia', serif;
+  --font-sans: 'Inter', -apple-system, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --transition: .25s cubic-bezier(.4,0,.2,1);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  font-size: 15px;
+}
+
+a { color: var(--accent); text-decoration: none; transition: color var(--transition); }
+a:hover { color: var(--accent-dark); }
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: linear-gradient(160deg, #1a3a2a 0%, #2d5a3f 40%, #3d7a55 70%, #5a9e72 100%);
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255,255,255,.08) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 20%, rgba(255,255,255,.05) 0%, transparent 50%);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  background: linear-gradient(to top, var(--bg), transparent);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 60px 24px;
+  max-width: 720px;
+}
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255,255,255,.1);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: 40px;
+  padding: 8px 20px;
+  font-size: 13px;
+  color: rgba(255,255,255,.9);
+  margin-bottom: 28px;
+  letter-spacing: .5px;
+}
+.hero-badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #a8d5ba;
+  box-shadow: 0 0 8px rgba(168,213,186,.6);
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: 52px;
+  font-weight: 900;
+  color: #fff;
+  letter-spacing: 4px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 40px rgba(0,0,0,.3);
+}
+.hero h1 em {
+  font-style: normal;
+  color: #a8d5ba;
+}
+.hero .subtitle {
+  font-size: 16px;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 36px;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+.hero-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+}
+.hero-chips .chip {
+  background: rgba(255,255,255,.08);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 8px;
+  padding: 10px 18px;
+  color: rgba(255,255,255,.85);
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: .3px;
+}
+
+/* ===== Layout ===== */
+.container { max-width: 960px; margin: 0 auto; padding: 0 24px; }
+.section { padding: 64px 0; }
+.section-header { margin-bottom: 36px; }
+.section-title {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+.section-desc {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* ===== Weather ===== */
+.weather-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-bottom: 16px;
+}
+.weather-card {
+  background: var(--surface);
+  border-radius: var(--radius);
+  padding: 28px;
+  border: 1px solid var(--border);
+  transition: all var(--transition);
+}
+.weather-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.weather-card.highlight {
+  border-color: var(--accent);
+  border-width: 1.5px;
+  background: linear-gradient(135deg, var(--surface), var(--accent-light));
+}
+.weather-card .day-label {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+}
+.weather-card .date {
+  font-family: var(--font-serif);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  margin: 4px 0 16px;
+}
+.weather-card .weather-main {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.weather-card .weather-icon { font-size: 36px; }
+.weather-card .temp {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--accent-dark);
+}
+.weather-card .temp small {
+  font-size: 16px;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.weather-card .desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 12px;
+}
+.weather-card .tip {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: var(--gold-light);
+  border-radius: 8px;
+  font-size: 12px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.weather-note {
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.8;
+}
+.weather-note strong { color: var(--accent-dark); }
+
+/* ===== Route Overview ===== */
+.route-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 32px;
+  margin-bottom: 20px;
+}
+.route-map {
+  width: 100%;
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  margin-bottom: 12px;
+}
+.route-map iframe { width: 100%; height: 400px; border: 0; display: block; }
+.route-map-mobile {
+  text-align: center;
+  margin-top: 8px;
+}
+.route-map-mobile a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 8px 16px;
+  background: var(--accent-light);
+  border-radius: 8px;
+  color: var(--accent);
+}
+.route-flow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 28px;
+  padding: 24px;
+  background: var(--bg);
+  border-radius: var(--radius);
+}
+.route-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  min-width: 80px;
+}
+.route-node .num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+}
+.route-node .name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+}
+.route-node .dist {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+.route-arrow {
+  color: var(--text-muted);
+  font-size: 14px;
+  opacity: .5;
+}
+
+/* ===== Timeline ===== */
+.day-block { margin-bottom: 40px; }
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 20px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all var(--transition);
+  user-select: none;
+}
+.day-header:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-xs);
+}
+.day-badge {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.day-badge .d { font-size: 9px; letter-spacing: 1px; text-transform: uppercase; opacity: .8; }
+.day-badge .n { font-size: 20px; line-height: 1; }
+.day-header-info { flex: 1; }
+.day-header-info .title {
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text);
+}
+.day-header-info .meta {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+.day-header .arrow {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform var(--transition);
+}
+.day-block input { display: none; }
+.day-block input:checked ~ .day-content { max-height: 5000px; opacity: 1; }
+.day-block input:checked ~ .day-header .arrow { transform: rotate(180deg); }
+.day-content {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height .5s ease, opacity .3s ease;
+}
+
+.tl-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 12px;
+  transition: all var(--transition);
+  position: relative;
+}
+.tl-card:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-sm);
+}
+.tl-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  bottom: 12px;
+  width: 3px;
+  border-radius: 3px;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+.tl-card:hover::before { opacity: 1; }
+
+.tl-time {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: var(--accent-light);
+  padding: 3px 10px;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  letter-spacing: .3px;
+}
+.tl-card h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.tl-tag {
+  display: inline-block;
+  font-size: 11px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+.tag-drive { background: var(--blue-light); color: var(--blue); }
+.tag-play { background: var(--accent-light); color: var(--accent); }
+.tag-eat { background: var(--gold-light); color: var(--gold); }
+.tag-rest { background: var(--rose-light); color: var(--rose); }
+
+.tl-card .content {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.9;
+}
+.tl-card .content ul { list-style: none; padding-left: 0; }
+.tl-card .content li {
+  padding: 3px 0;
+  padding-left: 16px;
+  position: relative;
+}
+.tl-card .content li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: .5;
+}
+.tl-card .content strong { color: var(--text); font-weight: 600; }
+
+.food-card {
+  background: var(--gold-light);
+  border: 1px solid rgba(184,134,11,.1);
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-top: 12px;
+}
+.food-card .fname { font-weight: 700; color: var(--gold); font-size: 14px; }
+.food-card .fdesc { font-size: 13px; color: var(--text-secondary); margin-top: 4px; }
+.food-card .fprice { font-size: 13px; color: var(--accent); font-weight: 600; margin-top: 4px; }
+
+/* Accommodation grid */
+.stay-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 12px;
+}
+.stay-item {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 16px;
+  transition: all var(--transition);
+}
+.stay-item:hover { border-color: var(--border-hover); }
+.stay-item .stay-type { font-weight: 700; color: var(--accent-dark); font-size: 13px; margin-bottom: 4px; }
+.stay-item .stay-name { font-size: 13px; color: var(--text); }
+.stay-item .stay-note { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.stay-item .stay-price { font-size: 14px; color: var(--accent); font-weight: 700; margin-top: 6px; }
+
+/* ===== Spot Details (Collapse) ===== */
+.spot-collapse { margin-bottom: 12px; }
+.spot-collapse input { display: none; }
+.spot-collapse-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+  transition: all var(--transition);
+  user-select: none;
+}
+.spot-collapse-label:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-xs);
+}
+.spot-collapse-label .arrow {
+  font-size: 12px;
+  color: var(--text-muted);
+  transition: transform var(--transition);
+}
+.spot-collapse input:checked + .spot-collapse-label { border-bottom-left-radius: 0; border-bottom-right-radius: 0; border-bottom-color: transparent; }
+.spot-collapse input:checked + .spot-collapse-label .arrow { transform: rotate(180deg); }
+.spot-collapse-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .4s ease;
+}
+.spot-collapse input:checked + .spot-collapse-label + .spot-collapse-body { max-height: 1200px; }
+.spot-collapse-content {
+  padding: 24px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+}
+
+.spot-banner {
+  width: 100%;
+  height: 160px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+}
+.spot-banner .b-emoji { font-size: 44px; z-index: 1; }
+.spot-banner .b-name {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 3px;
+  z-index: 1;
+}
+.spot-info { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.spot-info .si {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 4px 10px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+.spot-tips { font-size: 14px; color: var(--text-secondary); line-height: 1.9; }
+.spot-tips strong { color: var(--text); }
+.spot-tips ul { padding-left: 20px; margin-top: 6px; }
+.spot-tips li { margin-bottom: 4px; }
+
+/* ===== Budget ===== */
+.budget-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.budget-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+}
+.budget-card h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+}
+.budget-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 0;
+  font-size: 13px;
+}
+.budget-item + .budget-item { border-top: 1px dashed var(--border); }
+.budget-item .label { color: var(--text-secondary); }
+.budget-item .val { font-weight: 700; color: var(--text); }
+.budget-item .val.green { color: var(--accent); }
+
+.budget-total {
+  background: var(--accent);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+  color: #fff;
+  margin-top: 16px;
+}
+.budget-total .num { font-family: var(--font-serif); font-size: 36px; font-weight: 900; }
+.budget-total .per { font-size: 14px; opacity: .85; margin-top: 6px; }
+
+.budget-bar { margin-top: 16px; }
+.budget-bar .bar-row { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; font-size: 13px; }
+.budget-bar .bar-label { width: 50px; text-align: right; color: var(--text-muted); font-weight: 600; flex-shrink: 0; }
+.budget-bar .bar-track { flex: 1; height: 20px; background: var(--bg); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+.budget-bar .bar-fill { height: 100%; border-radius: 10px; display: flex; align-items: center; justify-content: flex-end; padding-right: 8px; color: #fff; font-size: 11px; font-weight: 700; }
+.bar-fill.f-drive { background: var(--blue); }
+.bar-fill.f-stay { background: var(--rose); }
+.bar-fill.f-ticket { background: var(--gold); }
+.bar-fill.f-food { background: var(--accent); }
+
+/* ===== Photo & Fashion ===== */
+.photo-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.photo-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: all var(--transition);
+}
+.photo-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-sm); }
+.photo-card .emoji { font-size: 28px; margin-bottom: 10px; }
+.photo-card h4 { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.photo-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+.fashion-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 28px;
+  margin-top: 20px;
+}
+.fashion-box h3 {
+  font-family: var(--font-serif);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 16px;
+}
+.fashion-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.fashion-tag {
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  border: 1px solid;
+}
+.ft-green { background: var(--accent-light); color: var(--accent); border-color: rgba(74,124,89,.15); }
+.ft-gold { background: var(--gold-light); color: var(--gold); border-color: rgba(184,134,11,.15); }
+.ft-blue { background: var(--blue-light); color: var(--blue); border-color: rgba(74,111,165,.15); }
+.ft-rose { background: var(--rose-light); color: var(--rose); border-color: rgba(160,97,106,.15); }
+.fashion-detail { font-size: 14px; color: var(--text-secondary); line-height: 1.9; }
+.fashion-detail strong { color: var(--text); font-weight: 600; }
+
+/* ===== Tips ===== */
+.tips-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+.tip-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: all var(--transition);
+}
+.tip-card:hover { border-color: var(--border-hover); box-shadow: var(--shadow-sm); }
+.tip-card .tip-icon { font-size: 22px; margin-bottom: 8px; }
+.tip-card h4 { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.tip-card p { font-size: 13px; color: var(--text-secondary); line-height: 1.7; }
+
+/* ===== Footer ===== */
+.footer {
+  background: var(--text);
+  color: rgba(255,255,255,.6);
+  text-align: center;
+  padding: 40px 24px;
+  font-size: 13px;
+}
+.footer strong { color: rgba(255,255,255,.9); }
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 36px; letter-spacing: 2px; }
+  .hero .subtitle { font-size: 14px; }
+  .weather-grid { grid-template-columns: 1fr; }
+  .budget-grid { grid-template-columns: 1fr; }
+  .photo-grid { grid-template-columns: 1fr; }
+  .tips-grid { grid-template-columns: 1fr; }
+  .stay-grid { grid-template-columns: 1fr; }
+  .section { padding: 40px 0; }
+  .route-flow { flex-direction: column; }
+  .route-arrow { transform: rotate(90deg); }
+  .day-header { flex-wrap: wrap; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-badge"><span class="dot"></span> 2026.07.04 - 07.05 &middot; 周末两日自驾</div>
+    <h1>英德<em>小桂林</em>之旅</h1>
+    <p class="subtitle">深圳南头古城 &rarr; 英西峰林 &middot; 宝晶宫 &middot; 洞天仙境</p>
+    <div class="hero-chips">
+      <span class="chip">Model Y 自驾</span>
+      <span class="chip">总里程 ~578km</span>
+      <span class="chip">22-29°C 阵雨</span>
+      <span class="chip">人均 ~¥590</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WEATHER ===== -->
+<section class="section container">
+  <div class="section-header">
+    <h2 class="section-title">天气预报</h2>
+    <p class="section-desc">数据来源 weatherapi.com &middot; 出行前请再次确认实时天气</p>
+  </div>
+  <div class="weather-grid">
+    <div class="weather-card highlight">
+      <div class="day-label">Saturday &middot; 出发日</div>
+      <div class="date">7月4日</div>
+      <div class="weather-main">
+        <span class="weather-icon">🌧️</span>
+        <span class="temp">29<small> / 22°C</small></span>
+      </div>
+      <div class="desc">阵雨 &middot; 湿度高</div>
+      <div class="tip">带伞 + 雨衣，溶洞内干燥凉爽</div>
+    </div>
+    <div class="weather-card">
+      <div class="day-label">Sunday &middot; 返程日</div>
+      <div class="date">7月5日</div>
+      <div class="weather-main">
+        <span class="weather-icon">🌧️</span>
+        <span class="temp">27<small> / 23°C</small></span>
+      </div>
+      <div class="desc">阵雨 &middot; 较凉爽</div>
+      <div class="tip">雨天路滑，高速注意车速</div>
+    </div>
+  </div>
+  <div class="weather-note">
+    <strong>天气策略：</strong>7月是英德雨季，阵雨为主通常不会持续太久。溶洞景点（洞天仙境、宝晶宫）不受雨天影响，反而雨后峰林云雾缭绕更出片。将户外峰林观光安排在雨停间隙，室内溶洞安排在下雨时段。
+  </div>
+</section>
+
+<!-- ===== ROUTE OVERVIEW ===== -->
+<section class="section container" style="padding-top:0">
+  <div class="section-header">
+    <h2 class="section-title">路线总览</h2>
+    <p class="section-desc">深圳 &rarr; 英西峰林（西侧）&rarr; 宝晶宫（东侧）&rarr; 深圳，一路向东不走回头路</p>
+  </div>
+  <div class="route-box">
+    <div class="route-map">
+      <iframe src="https://apis.map.qq.com/tools/poimarker?type=0&marker=coord:22.543758,113.920546;title:深圳南头古城;coord:24.152040,112.900040;title:①洞天仙境;coord:24.120542,112.923834;title:②峰林晓镇;coord:24.123451,113.368735;title:③宝晶宫&key=OB4BZ-D4W3U-7VRVO-4PB4H-MWUCZ-EOF5J&referer=myapp" loading="lazy"></iframe>
+    </div>
+    <div class="route-map-mobile">
+      <a href="https://apis.map.qq.com/tools/poimarker?type=0&marker=coord:22.543758,113.920546;title:深圳南头古城;coord:24.152040,112.900040;title:①洞天仙境;coord:24.120542,112.923834;title:②峰林晓镇;coord:24.123451,113.368735;title:③宝晶宫&key=OB4BZ-D4W3U-7VRVO-4PB4H-MWUCZ-EOF5J&referer=myapp" target="_blank">在手机地图中查看</a>
+    </div>
+    <div class="route-flow">
+      <div class="route-node"><div class="num">出</div><div class="name">南头古城</div><div class="dist">起点</div></div>
+      <div class="route-arrow">&rarr;</div>
+      <div class="route-node"><div class="num">1</div><div class="name">洞天仙境</div><div class="dist">262km / 3.5h</div></div>
+      <div class="route-arrow">&rarr;</div>
+      <div class="route-node"><div class="num">2</div><div class="name">峰林晓镇</div><div class="dist">6km / 13min</div></div>
+      <div class="route-arrow">&rarr;</div>
+      <div class="route-node"><div class="num">3</div><div class="name">宝晶宫</div><div class="dist">79km / 1h</div></div>
+      <div class="route-arrow">&rarr;</div>
+      <div class="route-node"><div class="num">回</div><div class="name">返回深圳</div><div class="dist">231km / 3.3h</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIMELINE ===== -->
+<section class="section container" style="padding-top:0">
+  <div class="section-header">
+    <h2 class="section-title">行程时间线</h2>
+    <p class="section-desc">两天一夜 &middot; 点击日期展开 / 收起详情</p>
+  </div>
+
+  <!-- Day 1 -->
+  <div class="day-block">
+    <input type="checkbox" id="d1" checked>
+    <label class="day-header" for="d1">
+      <div class="day-badge"><span class="d">DAY</span><span class="n">1</span></div>
+      <div class="day-header-info">
+        <div class="title">7月4日（周六）&middot; 深圳出发 &rarr; 英西峰林</div>
+        <div class="meta">驾车 262km &middot; 过路费 ¥151 &middot; 阵雨 29°C</div>
+      </div>
+      <span class="arrow">▼</span>
+    </label>
+    <div class="day-content">
+      <div class="tl-card">
+        <div class="tl-time">07:00 - 10:30</div>
+        <h4><span class="tl-tag tag-drive">驾车</span> 南头古城出发</h4>
+        <div class="content">
+          <ul>
+            <li><strong>路线：</strong>南头城街 &rarr; 南坪快速 &rarr; 广深沿江高速 &rarr; 广州绕城高速 &rarr; 许广高速 &rarr; S348 &rarr; 峰林路 &rarr; 洞天仙境</li>
+            <li><strong>距离：</strong>262km &middot; 预计3小时29分钟 &middot; 过路费 ¥151</li>
+            <li><strong>Model Y 电量建议：</strong>出发前充满电（100%），全程高速约耗电60-70%，抵达后需补电</li>
+            <li><strong>途经服务区：</strong>可在许广高速六甲洞服务区短暂休整</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">10:30 - 12:30</div>
+        <h4><span class="tl-tag tag-play">游玩</span> 洞天仙境 &middot; 华南第一天坑</h4>
+        <div class="content">
+          <ul>
+            <li><strong>门票：</strong>约 ¥76/人（建议美团/抖音提前购买套票更划算）</li>
+            <li><strong>游玩：</strong>乘船穿洞而入（约200米水路）&rarr; 徒步穿天悬空栈道 &rarr; 玻璃观景台 &rarr; 玻璃滑道下山</li>
+            <li><strong>游玩时长：</strong>2小时 &middot; 溶洞内常年20-22°C，雨天最佳选择</li>
+            <li><strong>出片要点：</strong>洞内乘船时拍「别有洞天」光影大片（洞顶天光透入）；穿天栈道仰拍钟乳石；玻璃观景台俯拍峰林全景</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">12:30 - 13:30</div>
+        <h4><span class="tl-tag tag-eat">午餐</span> 九龙镇农家菜</h4>
+        <div class="food-card">
+          <div class="fname">洞天农家菜馆</div>
+          <div class="fdesc">距洞天仙境仅116米 &middot; 招牌：九龙豆腐煲、山坑鱼仔、豆腐蛋饺鱼仔煲</div>
+          <div class="fprice">人均 ¥50-60</div>
+        </div>
+        <div class="food-card" style="margin-top:8px">
+          <div class="fname">翔仔农家菜 &middot; 新鲜无花果浸鸡</div>
+          <div class="fdesc">九龙大道29号，距景区2.7km &middot; 招牌：无花果浸鸡（英德十大名菜做法）、走地鸡</div>
+          <div class="fprice">人均 ¥60-70</div>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">13:30 - 14:00</div>
+        <h4><span class="tl-tag tag-drive">驾车</span> 前往峰林晓镇</h4>
+        <div class="content">
+          <ul>
+            <li><strong>距离：</strong>6.3km &middot; 约13分钟 &middot; 无过路费</li>
+            <li><strong>路线：</strong>Y440 &rarr; Y021 &rarr; 峰林路 &rarr; S348 &rarr; X366</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">14:00 - 17:00</div>
+        <h4><span class="tl-tag tag-play">游玩</span> 峰林晓镇 &middot; 英西峰林核心景区</h4>
+        <div class="content">
+          <ul>
+            <li><strong>门票：</strong>约 ¥60/人（含峰林观光），荷花小火车/游船等项目另购</li>
+            <li><strong>核心玩法：</strong>峰林莲湖300亩荷花（7月盛花期）&rarr; 荷花小火车（穿越花田3km）&rarr; 莲湖游船 &rarr; 玻璃观景平台 &rarr; 七彩花田</li>
+            <li><strong>游玩时长：</strong>3小时 &middot; 雨后云雾缭绕时峰林最美</li>
+            <li><strong>出片要点：</strong>荷花小火车上拍宫崎骏风（穿白裙/浅色）；莲湖秋千+天空之伞网红打卡点；玻璃平台俯拍千亩峰林；傍晚光线柔和拍田园风光</li>
+            <li><strong>雨天优势：</strong>雨后峰林云雾升腾，是出大片的最佳时机</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">17:00 - 18:00</div>
+        <h4><span class="tl-tag tag-eat">晚餐</span> 九龙镇特色晚餐</h4>
+        <div class="food-card">
+          <div class="fname">老字号祥龙酒楼</div>
+          <div class="fdesc">九龙大道22号 &middot; 招牌：英德走地鸡（白切）、九龙豆腐、卷筒糍、北江河鲜</div>
+          <div class="fprice">人均 ¥60-80</div>
+        </div>
+        <div class="food-card" style="margin-top:8px">
+          <div class="fname">亮圆酒楼 &middot; 特色农家菜</div>
+          <div class="fdesc">九龙大道24号 &middot; 招牌：柴火焖牛大骨、五花腩肉鲜笋、咸蛋黄五花肉</div>
+          <div class="fprice">人均 ¥60-70</div>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">18:30 -</div>
+        <h4><span class="tl-tag tag-rest">住宿</span> 英西峰林附近民宿</h4>
+        <div class="content" style="margin-bottom:12px">推荐住宿（距峰林晓镇/洞天仙境较近，次日前往宝晶宫79km约1小时）：</div>
+        <div class="stay-grid">
+          <div class="stay-item">
+            <div class="stay-type">经济型</div>
+            <div class="stay-name">迎来民宿</div>
+            <div class="stay-note">距洞天仙境533m</div>
+            <div class="stay-price">¥120-180/晚</div>
+          </div>
+          <div class="stay-item">
+            <div class="stay-type">舒适型</div>
+            <div class="stay-name">仟谷云舍汤泉民宿</div>
+            <div class="stay-note">距峰林晓镇2km &middot; 含温泉</div>
+            <div class="stay-price">¥280-380/晚</div>
+          </div>
+          <div class="stay-item">
+            <div class="stay-type">品质型</div>
+            <div class="stay-name">峰林酒店</div>
+            <div class="stay-note">全景落地窗 + 露天温泉</div>
+            <div class="stay-price">¥400-600/晚</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Day 2 -->
+  <div class="day-block">
+    <input type="checkbox" id="d2" checked>
+    <label class="day-header" for="d2">
+      <div class="day-badge"><span class="d">DAY</span><span class="n">2</span></div>
+      <div class="day-header-info">
+        <div class="title">7月5日（周日）&middot; 宝晶宫 &rarr; 返回深圳</div>
+        <div class="meta">驾车 310km &middot; 过路费 ¥135 &middot; 阵雨 27°C</div>
+      </div>
+      <span class="arrow">▼</span>
+    </label>
+    <div class="day-content">
+      <div class="tl-card">
+        <div class="tl-time">08:00 - 08:30</div>
+        <h4><span class="tl-tag tag-eat">早餐</span> 民宿早餐 + 英德特色</h4>
+        <div class="content">
+          <ul>
+            <li>民宿含早或镇上早餐店品尝：<strong>卷筒糍</strong>（油条+肠粉组合，英德特色）、<strong>卜卜糍</strong>、<strong>英红九号奶茶</strong></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">08:30 - 09:30</div>
+        <h4><span class="tl-tag tag-drive">驾车</span> 前往宝晶宫</h4>
+        <div class="content">
+          <ul>
+            <li><strong>路线：</strong>X366 &rarr; Y501 &rarr; 汕昆高速 &rarr; 乐广高速 &rarr; 迎宾大道 &rarr; Y387</li>
+            <li><strong>距离：</strong>79.4km &middot; 约65分钟 &middot; 过路费 ¥33</li>
+            <li><strong>Model Y 补电提醒：</strong>建议在九龙镇/英德市区充电后出发，宝晶宫停车场附近有充电桩</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">09:30 - 12:00</div>
+        <h4><span class="tl-tag tag-play">游玩</span> 宝晶宫 &middot; 岭南第一洞天</h4>
+        <div class="content">
+          <ul>
+            <li><strong>门票：</strong>溶洞 ¥76/人；推荐套票（溶洞+天宫玻璃桥+天鹅湖游船）约 ¥120/人，美团/抖音更便宜</li>
+            <li><strong>游览路线：</strong>狮子山天梯（登高电梯）&rarr; 天宫玻璃桥（218米湖景玻璃桥）&rarr; 丛林飞车下山 &rarr; 宝晶宫溶洞（免费导游讲解）&rarr; 天鹅湖游船</li>
+            <li><strong>游玩时长：</strong>2.5小时 &middot; 溶洞内20-22°C，雨天完美选择</li>
+            <li><strong>出片要点：</strong>天宫玻璃桥俯拍千亩天鹅湖（穿鞋套）；溶洞内钟乳石灯光大片（关闭闪光灯）；天鹅湖游船拍倒影山水</li>
+            <li><strong>溶洞亮点：</strong>四层溶洞（开放三层），游程1.5km，内有窖藏酒可免费品尝</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">12:00 - 13:00</div>
+        <h4><span class="tl-tag tag-eat">午餐</span> 宝晶宫附近用餐</h4>
+        <div class="food-card">
+          <div class="fname">北江渔家中餐厅（宝晶宫天鹅湖店）</div>
+          <div class="fdesc">天鹅湖温泉酒店2楼 &middot; 距景区464m &middot; 招牌：古窑烧鸡、酥炸九龙豆腐、北江河鲜、生态鱼</div>
+          <div class="fprice">人均 ¥73</div>
+        </div>
+        <div class="food-card" style="margin-top:8px">
+          <div class="fname">龙威农庄（宝晶宫店）</div>
+          <div class="fdesc">对面塘村1号 &middot; 距景区1.2km &middot; 招牌：走地鸡、农家菜、河虾仔</div>
+          <div class="fprice">人均 ¥50-60</div>
+        </div>
+      </div>
+
+      <div class="tl-card">
+        <div class="tl-time">13:00 - 16:30</div>
+        <h4><span class="tl-tag tag-drive">返程</span> 宝晶宫 &rarr; 深圳南头古城</h4>
+        <div class="content">
+          <ul>
+            <li><strong>路线：</strong>Y387 &rarr; S292 &rarr; 英佛线 &rarr; G106 &rarr; 京港澳高速 &rarr; 大广高速 &rarr; 珠三角环线高速 &rarr; 从埔高速 &rarr; 广州绕城高速 &rarr; 京港澳高速 &rarr; 南头立交 &rarr; 南山大道</li>
+            <li><strong>距离：</strong>230.5km &middot; 预计3小时19分钟 &middot; 过路费 ¥102</li>
+            <li><strong>预计到达：</strong>约16:30抵达深圳南头古城</li>
+            <li><strong>雨天提醒：</strong>阵雨天气路面湿滑，保持车距，限速行驶</li>
+            <li><strong>Model Y 电量：</strong>出发前确认满电，全程约耗电55-60%</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SPOT DETAILS ===== -->
+<section class="section container" style="padding-top:0">
+  <div class="section-header">
+    <h2 class="section-title">景点详情</h2>
+    <p class="section-desc">点击展开查看每个景点的完整信息</p>
+  </div>
+
+  <div class="spot-collapse">
+    <input type="checkbox" id="s1">
+    <label class="spot-collapse-label" for="s1">① 洞天仙境 &middot; 华南第一天坑 <span class="arrow">▼</span></label>
+    <div class="spot-collapse-body"><div class="spot-collapse-content">
+      <div class="spot-banner" style="background:linear-gradient(135deg,#1a3a5a,#2d6090,#4a90c4)"><span class="b-emoji">🚣</span><span class="b-name">洞天仙境</span></div>
+      <div class="spot-info">
+        <span class="si">¥76/人</span>
+        <span class="si">2小时</span>
+        <span class="si">难度适中</span>
+        <span class="si">雨天友好</span>
+      </div>
+      <div class="spot-tips">
+        <p><strong>简介：</strong>国家4A级景区，英西峰林走廊核心景点。溪流穿山而过的岩洞，洞内广阔，钟乳石形态多样，洞顶有天光透入，「别有洞天」意境。</p>
+        <p style="margin-top:10px"><strong>出片指南：</strong></p>
+        <ul>
+          <li>乘船入洞时拍天光透射的「一线天」效果</li>
+          <li>穿天悬空栈道仰拍钟乳石奇观</li>
+          <li>九龙之星玻璃观景台俯拍峰林全景</li>
+          <li>雨后洞口云雾缭绕，拍山水画意境</li>
+        </ul>
+        <p style="margin-top:10px"><strong>购票建议：</strong>美团/抖音提前购买套票（含玻璃观景台+滑道），比现场便宜约10-20元</p>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="spot-collapse">
+    <input type="checkbox" id="s2">
+    <label class="spot-collapse-label" for="s2">② 峰林晓镇 &middot; 英西峰林核心 <span class="arrow">▼</span></label>
+    <div class="spot-collapse-body"><div class="spot-collapse-content">
+      <div class="spot-banner" style="background:linear-gradient(135deg,#1a4a2a,#2d7040,#4a9e62)"><span class="b-emoji">⛰️</span><span class="b-name">峰林晓镇</span></div>
+      <div class="spot-info">
+        <span class="si">¥60/人</span>
+        <span class="si">3小时</span>
+        <span class="si">轻松休闲</span>
+        <span class="si">7月荷花季</span>
+      </div>
+      <div class="spot-tips">
+        <p><strong>简介：</strong>占地8000亩的英西峰林「头牌」景区，千座石灰岩峰林+千亩花海。7月正是300亩荷花盛花期，30多个品种竞相绽放。</p>
+        <p style="margin-top:10px"><strong>核心体验：</strong>荷花小火车（穿越花田3km）&middot; 莲湖游船 &middot; 玻璃观景平台 &middot; 玲珑石 &middot; 七彩花田 &middot; 莲湖秋千 &middot; 天空之伞</p>
+        <p style="margin-top:10px"><strong>出片指南：</strong></p>
+        <ul>
+          <li>荷花小火车上拍宫崎骏动画风（浅色/白色穿搭）</li>
+          <li>莲湖秋千+天空之伞网红打卡点</li>
+          <li>玻璃观景台俯拍千亩峰林+荷花</li>
+          <li>雨后峰林云雾升腾，拍山水大片最佳时机</li>
+        </ul>
+        <p style="margin-top:10px"><strong>购票建议：</strong>建议购买含小火车+游船的套票，单独购票性价比低</p>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="spot-collapse">
+    <input type="checkbox" id="s3">
+    <label class="spot-collapse-label" for="s3">③ 宝晶宫 &middot; 岭南第一洞天 <span class="arrow">▼</span></label>
+    <div class="spot-collapse-body"><div class="spot-collapse-content">
+      <div class="spot-banner" style="background:linear-gradient(135deg,#3a2a1a,#6a5030,#9a7a50)"><span class="b-emoji">🕰️</span><span class="b-name">宝晶宫</span></div>
+      <div class="spot-info">
+        <span class="si">¥76/人起</span>
+        <span class="si">2.5小时</span>
+        <span class="si">难度适中</span>
+        <span class="si">雨天友好</span>
+      </div>
+      <div class="spot-tips">
+        <p><strong>简介：</strong>广东省级风景名胜区，溶洞面积3万多㎡居广东之最。四层相叠金字塔形溶洞，已开放三层，游程1.5km。被誉为「岭南第一洞天」。</p>
+        <p style="margin-top:10px"><strong>游玩路线：</strong>狮子山天梯（电梯登高）&rarr; 天宫玻璃桥（218米/海拔88米）&rarr; 丛林飞车下山 &rarr; 宝晶宫溶洞（导游免费讲解）&rarr; 天鹅湖游船</p>
+        <p style="margin-top:10px"><strong>出片指南：</strong></p>
+        <ul>
+          <li>天宫玻璃桥俯拍千亩天鹅湖全景</li>
+          <li>溶洞内钟乳石灯光大片（关闪光灯，长曝光）</li>
+          <li>天鹅湖游船拍三面环山倒影</li>
+          <li>燕子岩关山月题「宝晶宫」石刻（每字100㎡）</li>
+        </ul>
+        <p style="margin-top:10px"><strong>购票建议：</strong>推荐套票（溶洞+玻璃桥+游船）约 ¥120，比单买划算</p>
+        <p style="margin-top:10px"><strong>特别提醒：</strong>溶洞内20-22°C，建议带薄外套；内有窖藏酒可免费品尝</p>
+      </div>
+    </div></div>
+  </div>
+
+  <div class="spot-collapse">
+    <input type="checkbox" id="s4">
+    <label class="spot-collapse-label" for="s4">④ 加选：英西峰林走廊徒步 <span class="arrow">▼</span></label>
+    <div class="spot-collapse-body"><div class="spot-collapse-content">
+      <div class="spot-info">
+        <span class="si">免费</span>
+        <span class="si">1-2小时</span>
+        <span class="si">轻松</span>
+      </div>
+      <div class="spot-tips">
+        <p><strong>简介：</strong>如果D1在峰林晓镇结束较早（16:00前），可沿英西峰林走廊免费徒步路段散步，这是广东十大最美徒步路线之一。</p>
+        <p style="margin-top:10px"><strong>推荐短路线（1h）：</strong>观音谷 &rarr; 英西牛仔农庄过桥 &rarr; 沿河徒步观光 &rarr; 公正村</p>
+        <p style="margin-top:10px"><strong>出片指南：</strong>沿途田园风光+峰林倒影，雨后云雾最美。适合拍人文田园风</p>
+        <p style="margin-top:10px"><strong>注意：</strong>徒步路线为乡间小路，雨天注意防滑。若雨势较大建议跳过，在民宿泡温泉休息</p>
+      </div>
+    </div></div>
+  </div>
+</section>
+
+<!-- ===== BUDGET ===== -->
+<section class="section container" style="padding-top:0">
+  <div class="section-header">
+    <h2 class="section-title">预算明细</h2>
+    <p class="section-desc">按1人自驾计算 &middot; 7月非节假日，高速不免费</p>
+  </div>
+
+  <div class="budget-grid">
+    <div class="budget-card">
+      <h3>交通费用</h3>
+      <div class="budget-item"><span class="label">D1 过路费（深圳→洞天仙境）</span><span class="val">¥151</span></div>
+      <div class="budget-item"><span class="label">D1 景点间（洞天仙境→峰林晓镇）</span><span class="val">¥0</span></div>
+      <div class="budget-item"><span class="label">D2 过路费（峰林→宝晶宫）</span><span class="val">¥33</span></div>
+      <div class="budget-item"><span class="label">D2 过路费（宝晶宫→深圳）</span><span class="val">¥102</span></div>
+      <div class="budget-item"><span class="label">Model Y 充电费（578km）</span><span class="val green">¥69</span></div>
+      <div class="budget-item"><span class="label">停车费（估算）</span><span class="val">¥20</span></div>
+      <div class="budget-item"><span class="label" style="font-weight:700">交通小计</span><span class="val" style="font-size:15px;font-weight:700">¥375</span></div>
+    </div>
+
+    <div class="budget-card">
+      <h3>门票 + 餐饮</h3>
+      <div class="budget-item"><span class="label">洞天仙境（套票预估）</span><span class="val">¥76</span></div>
+      <div class="budget-item"><span class="label">峰林晓镇（含小火车套票）</span><span class="val">¥90</span></div>
+      <div class="budget-item"><span class="label">宝晶宫（溶洞+玻璃桥+游船）</span><span class="val">¥120</span></div>
+      <div class="budget-item"><span class="label" style="font-weight:700">门票小计</span><span class="val" style="font-weight:700">¥286</span></div>
+      <div style="height:16px"></div>
+      <div class="budget-item"><span class="label">D1 午餐（农家菜）</span><span class="val">¥60</span></div>
+      <div class="budget-item"><span class="label">D1 晚餐（特色酒楼）</span><span class="val">¥70</span></div>
+      <div class="budget-item"><span class="label">D2 早餐</span><span class="val">¥15</span></div>
+      <div class="budget-item"><span class="label">D2 午餐（宝晶宫附近）</span><span class="val">¥65</span></div>
+      <div class="budget-item"><span class="label">零食饮品/英红九号奶茶</span><span class="val">¥30</span></div>
+      <div class="budget-item"><span class="label" style="font-weight:700">餐饮小计</span><span class="val" style="font-weight:700">¥240</span></div>
+    </div>
+  </div>
+
+  <div class="budget-card" style="margin-top:16px">
+    <h3>住宿费用</h3>
+    <div class="budget-item"><span class="label">经济型（迎来民宿等）</span><span class="val">¥120-180</span></div>
+    <div class="budget-item"><span class="label">舒适型（仟谷云舍汤泉民宿 &middot; 含温泉）</span><span class="val">¥280-380</span></div>
+    <div class="budget-item"><span class="label">品质型（峰林酒店 &middot; 全景落地窗）</span><span class="val">¥400-600</span></div>
+  </div>
+
+  <div class="budget-total">
+    <div style="font-size:13px;opacity:.8;margin-bottom:4px">总预算（按舒适型住宿估算）</div>
+    <div class="num">¥941</div>
+    <div class="per">交通 ¥375 + 门票 ¥286 + 餐饮 ¥240 + 住宿 ¥330 + 杂费 ¥10</div>
+  </div>
+
+  <div class="budget-bar">
+    <div class="bar-row"><span class="bar-label">交通</span><div class="bar-track"><div class="bar-fill f-drive" style="width:40%">¥375</div></div></div>
+    <div class="bar-row"><span class="bar-label">门票</span><div class="bar-track"><div class="bar-fill f-ticket" style="width:30%">¥286</div></div></div>
+    <div class="bar-row"><span class="bar-label">餐饮</span><div class="bar-track"><div class="bar-fill f-food" style="width:26%">¥240</div></div></div>
+    <div class="bar-row"><span class="bar-label">住宿</span><div class="bar-track"><div class="bar-fill f-stay" style="width:35%">¥330</div></div></div>
+  </div>
+</section>
+
+<!-- ===== PHOTO & FASHION ===== -->
+<section class="section container" style="padding-top:0">
+  <div class="section-header">
+    <h2 class="section-title">出片 & 穿搭指南</h2>
+    <p class="section-desc">结合英德山水特色 + 雨季天气，拍出朋友圈大片</p>
+  </div>
+
+  <div class="photo-grid">
+    <div class="photo-card">
+      <div class="emoji">🚣</div>
+      <h4>溶洞光影大片</h4>
+      <p>洞天仙境/宝晶宫溶洞内，关闭闪光灯，利用洞内景观灯拍剪影。乘船时拍天光透射的「一线天」效果，曝光补偿+1。</p>
+    </div>
+    <div class="photo-card">
+      <div class="emoji">⛰️</div>
+      <h4>峰林云雾山水</h4>
+      <p>雨后峰林晓镇云雾升腾时是最佳出片时机。玻璃观景台俯拍千亩峰林，用广角模式。荷塘前景+峰林背景构图。</p>
+    </div>
+    <div class="photo-card">
+      <div class="emoji">🌸</div>
+      <h4>荷花小火车</h4>
+      <p>穿浅色/白色裙装坐小火车穿越花田，拍宫崎骏动画风。莲湖秋千、天空之伞是必打卡网红点。</p>
+    </div>
+    <div class="photo-card">
+      <div class="emoji">🌉</div>
+      <h4>玻璃桥俯拍</h4>
+      <p>宝晶宫天宫玻璃桥218米横跨湖面，俯拍千亩天鹅湖。穿鞋套，低角度拍桥面+湖面倒影。</p>
+    </div>
+  </div>
+
+  <div class="fashion-box">
+    <h3>穿搭建议（22-29°C 阵雨）</h3>
+    <div class="fashion-tags">
+      <span class="fashion-tag ft-green">浅色系</span>
+      <span class="fashion-tag ft-blue">白色/淡蓝</span>
+      <span class="fashion-tag ft-gold">防滑鞋</span>
+      <span class="fashion-tag ft-rose">薄外套</span>
+      <span class="fashion-tag ft-green">速干面料</span>
+    </div>
+    <div class="fashion-detail">
+      <p><strong>男生：</strong>浅色T恤/亚麻衬衫 + 速干短裤/休闲裤 + 防滑运动鞋。带一件薄冲锋衣防雨。溶洞内20°C左右较凉，备薄外套。</p>
+      <p style="margin-top:8px"><strong>女生：</strong>白色/浅色连衣裙（出片最佳）+ 舒适平底鞋/小白鞋。带透明雨伞（既是雨具也是拍照道具）。溶洞内备薄外套。</p>
+      <p style="margin-top:8px"><strong>通用：</strong>防滑鞋是必须的（溶洞湿滑、雨天路滑）；速干面料衣物便于雨天活动；帽子+墨镜晴天备用。</p>
+      <p style="margin-top:8px"><strong>调色建议：</strong>峰林山水适合冷调/青绿色调；荷花小火车适合明亮暖调；溶洞适合暗调高对比。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TIPS ===== -->
+<section class="section container" style="padding-top:0">
+  <div class="section-header">
+    <h2 class="section-title">实用贴士</h2>
+  </div>
+  <div class="tips-grid">
+    <div class="tip-card">
+      <div class="tip-icon">⚡</div>
+      <h4>Model Y 充电规划</h4>
+      <p>全程578km，满电续航约450-550km。建议D1出发前充满，D1晚在九龙镇/英德市区补电。宝晶宫停车场附近有充电桩。英德市区特斯拉超充可用。</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🌧️</div>
+      <h4>雨天行车安全</h4>
+      <p>7月英德雨季，阵雨为主。雨天路滑，高速保持100m以上车距，限速行驶。Model Y雨天能耗增加10-15%，预留充足电量。出发前检查雨刮器、轮胎。</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🎫</div>
+      <h4>门票省钱攻略</h4>
+      <p>所有景点均建议在美团/抖音提前购买，比现场便宜10-20元。峰林晓镇和宝晶宫推荐套票。洞天仙境+峰林晓镇可买联票。</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🍜</div>
+      <h4>必吃美食清单</h4>
+      <p>九龙豆腐（嫩滑豆香浓）&middot; 英德走地鸡（白切）&middot; 北江河鲜 &middot; 卷筒糍（油条+肠粉）&middot; 英红九号奶茶/雪糕 &middot; 无花果浸鸡 &middot; 山坑鱼仔</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">📱</div>
+      <h4>信号与导航</h4>
+      <p>英西峰林部分乡道手机信号弱，建议提前下载离线地图。腾讯地图/高德地图均可导航。溶洞内无信号，约定集合时间地点。</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">⏰</div>
+      <h4>时间管理建议</h4>
+      <p>宝晶宫9:30开门，洞天仙境8:30开门。D1早上7点出发可避开深圳早高峰。D2建议8:30出发前往宝晶宫，确保13:00前开始返程避开拥堵。</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🅿️</div>
+      <h4>停车信息</h4>
+      <p>三个景点均有停车场，免费或少量收费。宝晶宫正门北停车场较大。峰林晓镇停车场在售票处旁。洞天仙境停车场在景区入口。</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-icon">🧥</div>
+      <h4>溶洞穿衣提醒</h4>
+      <p>洞天仙境和宝晶宫溶洞内常年20-22°C，比外面低8-10°C。进入溶洞务必带薄外套。溶洞地面湿滑，穿防滑鞋。拍照关闭闪光灯。</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <p><strong>英德小桂林自驾攻略</strong> &middot; 2026.07.04 - 07.05</p>
+  <p style="margin-top:8px;opacity:.5;font-size:12px">数据来源：腾讯地图MCP（路线/坐标）&middot; weatherapi.com（天气）&middot; web_search（景点/美食）</p>
+  <p style="margin-top:4px;opacity:.5;font-size:12px">门票价格和开放时间可能有变动，出发前请再次确认。雨天注意安全。</p>
+</footer>
+
+</body>
+</html>
